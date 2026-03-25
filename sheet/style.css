@@ -93,6 +93,7 @@ nav.navbar {
 section.banner-section-start {
     background: var(--red-color);
     padding-bottom: 3rem;
+    position:relative;
 }
 p.content-para{
     color: var(--text-color);
@@ -266,8 +267,19 @@ span.feature-btn:hover {
     padding: 22px;
 }
 section.contact-section {
-    background-image: var(--red-color);
+    background-image: linear-gradient(135deg, #3b4cb8 0%, #4a2c65 50%, #9c35a8 100%);
     margin-top: 8rem;
+    position:relative;
+}
+section.contact-section::before,section.banner-section-start::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.6;
+    background-image: url(..//image/img55.svg);
 }
 h1.cont-head {
     color: var(--white-color);
@@ -284,6 +296,7 @@ p.para-head {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    backdrop-filter: blur(10px);
 }
 .con-content {
     text-align: center;
@@ -300,6 +313,7 @@ input#text, input#email, input#sub{
 }
 input#text::placeholder,input#email::placeholder,input#message::placeholder,input#sub::placeholder,textarea::placeholder{
     color:rgba(255, 255, 255, 0.2);
+    font-size:16px;
 }
 input#sub {
     width: 705px;
@@ -331,7 +345,7 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:20px;
+    gap:38px;
 }
 a.form-btn {
     color: var(--white-color);
